@@ -1,0 +1,27 @@
+{% set article_show = path('article_show', {'slug': article.slug }) %}
+
+<article class="mb-5">
+    <div class="row">
+        <div class="col-md-{{ leftCol ?? 5 }}">
+                <a href="{{ article_show }}">
+                    <img class="rounded" src="https://i0.wp.com/digitiz.fr/wp-content/uploads/2022/03/Languages-de-programmation.png?fit=1080%2C675&ssl=1"  loading="lazy" width="350" height="205">
+                </a>
+        </div>
+        <div class="col-md-{{ rightCol ?? 7 }}">
+            <h2>
+                <a class="text-decoration-none" href="{{ article_show}}">{{ article.title }}</a>
+            </h2>
+            <p>
+                {{ article.createdAt | date('d M Y')}}
+            </p>
+            <p>
+            {{ article.featuredText ?: article.content|striptags|slice(0,130) ~ '...' }}
+            </p>
+            <div class="d-flex align-items-center">
+                {% for category in article.categories %}
+                   <span class="badge rounded-pill me-1" style="background: {{ category.color }}"> {{ category.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</article>

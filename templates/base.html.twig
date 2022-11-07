@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>Monitoria - {% block title %}{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>💻</text></svg>">
+        <script src="https://kit.fontawesome.com/f5d01d2599.js" crossorigin="anonymous"></script>
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -18,10 +19,10 @@
             <div class="container d-flex flex-wrap">
                 <div class="dropdown">
                     <a class="nav nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Mon blog
+                        Monitoria
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropDownMenuButtonAdminDashboard">
-                        <li><a class="dropdown-item" href="#">Tableau de bord</a></li>
+                        <li><a class="dropdown-item" href="{{ path('admin')}}">Tableau de bord</a></li>
                         <li><a class="dropdown-item" href="#">Menus</a></li>
                     </ul>
                 </div>
@@ -42,7 +43,7 @@
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                 <a class="d-flex align-items-center me-md-auto text-dark text-decoration-none me-5"  href={{ path('app_home') }}>
-                    <span class="fs-4">Mon Blog</span>
+                    <span class="fs-4">Monitoria</span>
                 </a>
 
                 <ul class="nav nav-pills align-items-center">
@@ -57,14 +58,42 @@
             </header>
         </div>
 
+        <main id="content">
         {% block body %}{% endblock %}
+        </main>
 
-        <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="copyright"> ©  {{ 'now'|date('Y')}} Julien. Tout droits réservés.</span>
+        <footer class="footer block-dark mt-n15 mt-lg-n30">
+
+            <div class="h-150px h-lg-225px bgi-no-repeat bgi-position-x-center bgi-position-y-top bgi-size-cover dark-top-curved-bg"></div>
+
+            <div class="container py-5">
+
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">
+
+                    <div class="d-flex align-items-center mr-md-2 order-3 order-md-2">
+                        <span class="fw-bold text-white pt-1" href="{{ path('app_home') }}">
+						 ©  {{ 'now'|date('Y')}} Julien. Tout droits réservés.
+					    </span>
+                    </div>
+
+                    <div class=" d-flex order-1 order-md-1">
+                        <h1 class="text-white text-center fw-bold mb-3 mb-md-0">Monitoria</h1>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-center order-2 order-md-3 mb-5 mb-md-0 ms-3 ms-md-0">
+
+                        <div class="">
+                            <a href="#" class="text-decoration-none me-3 rounded-sm loaded text-white"><i class="fab fa-lg fa-facebook"></i></a>
+                            <a href="#" class="text-decoration-none me-3 rounded-sm loaded text-white"><i class="fab fa-lg fa-youtube"></i></a>
+                            <a href="#" class="text-decoration-none me-3 rounded-sm loaded text-white"><i class="fab fa-lg fa-github"></i></a>
+                        </div>
+
+                    </div>
+
                 </div>
-            </footer>
-        </div>
+            </div>
+
+        </footer>
+
     </body>
 </html>

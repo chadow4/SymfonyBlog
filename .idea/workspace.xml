@@ -2,15 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b95987-1db5-47b1-a9f3-1b5b7420e1ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/widget/about.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/widget/categories.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/AdminSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/Type/CommentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TimestampedInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/item.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article/list.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Page.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Page.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/comment/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/comment/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/page/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/widget/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/widget/about.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/widget/categories.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/widget/categories.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,18 +190,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/julie/Desktop/blogsymfony",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/julie/Desktop/cpoa-main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\julie\Desktop\blogsymfony\templates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\julie\Desktop\blogsymfony\assets\js" />
     </key>
@@ -207,7 +230,34 @@
       <workItem from="1657310292214" duration="77000" />
       <workItem from="1657316872754" duration="748000" />
       <workItem from="1657359347189" duration="3961000" />
-      <workItem from="1657395916531" duration="6274000" />
+      <workItem from="1657395916531" duration="7699000" />
+      <workItem from="1657409229912" duration="268000" />
+      <workItem from="1657410048204" duration="670000" />
+      <workItem from="1657410982545" duration="3703000" />
+      <workItem from="1657448651783" duration="15586000" />
+      <workItem from="1657481941230" duration="15205000" />
+      <workItem from="1657717337066" duration="73000" />
+      <workItem from="1660592937875" duration="772000" />
+      <workItem from="1660594305422" duration="3071000" />
+      <workItem from="1661093945610" duration="30000" />
+      <workItem from="1661172803660" duration="238000" />
+      <workItem from="1661528860588" duration="6000" />
+      <workItem from="1661951265743" duration="957000" />
+      <workItem from="1662036928709" duration="21000" />
+      <workItem from="1662070378925" duration="314000" />
+      <workItem from="1662130217421" duration="1620000" />
+      <workItem from="1662139423277" duration="85000" />
+      <workItem from="1662140136226" duration="626000" />
+      <workItem from="1663617722468" duration="21000" />
+      <workItem from="1663623384007" duration="71000" />
+      <workItem from="1664118372233" duration="834000" />
+      <workItem from="1664119847141" duration="820000" />
+      <workItem from="1664395467323" duration="17000" />
+      <workItem from="1664395493852" duration="626000" />
+      <workItem from="1664752095925" duration="14000" />
+      <workItem from="1665599620727" duration="8000" />
+      <workItem from="1665924485753" duration="31000" />
+      <workItem from="1666222434178" duration="148000" />
     </task>
     <servers />
   </component>

@@ -2,13 +2,14 @@
 
 namespace App\Entity;
 
+use App\Model\TimestampedInterface;
 use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-class Article
+class Article implements TimestampedInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -31,9 +32,9 @@ class Article
     private $createdAt;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
-    private $updateAt;
+    private $updatedAt;
 
-    #[ORM\ManyToMany(targetEntity: Category::class, mappedBy: 'articles')]
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'articles')]
     private $categories;
 
     #[ORM\OneToMany(mappedBy: 'article', targetEntity: Comment::class, orphanRemoval: true)]
@@ -113,14 +114,14 @@ class Article
         return $this;
     }
 
-    public function getUpdateAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->updateAt;
+        return $this->updatedAt;
     }
 
-    public function setUpdateAt(?\DateTimeInterface $updateAt): self
+    public function setUpdatedAt(?\DateTimeInterface $updateAt): self
     {
-        $this->updateAt = $updateAt;
+        $this->updatedAt = $updateAt;
 
         return $this;
     }
@@ -192,5 +193,10 @@ class Article
         $this->featuredImage = $featuredImage;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title;
     }
 }
